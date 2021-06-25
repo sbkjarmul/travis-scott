@@ -1,10 +1,12 @@
 import './App.css';
-import HeroCaption from './components/hero-caption'
+import Hero from './components/hero'
+import Navbar from './components/navbar'
 
 function App() {
   return (
-    <div className="App hero">
-      <HeroCaption />
+    <div className="App">
+      <Navbar />
+      <Hero />
     </div>
   );
 }
