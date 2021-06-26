@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 
 * {
   padding: 0;
@@ -16,12 +17,58 @@
   width: 100%;
   height: auto;
   padding: 32px 96px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
 }
 
 .navbar__logo {
   height: 48px;
   filter: invert();
 }
+
+.navbar__button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 16px;
+  font-size: 12px;
+  color: white;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  display: flex;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  
+}
+
+.navbar__button-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid white;
+  font-size: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin-right: 12px;
+}
+
+.navbar__button:hover {
+  text-shadow: 0px 0px 4px white;
+}
+
+.navbar__button:hover .navbar__button-icon {
+  box-shadow: 0px 0px 8px rgb(0, 255, 234);
+}
+
 
 .hero {
   width: 100%;
