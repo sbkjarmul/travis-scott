@@ -1,10 +1,21 @@
 import React from 'react'
-import { FaInstagram } from 'react-icons/fa'
+import '../App.css'
+import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
  
 const Footer = () => {
   return (
     <div className="footer">
-      <FaInstagram />
+      <div className="footer__icons">
+        <a className="footer__link">
+          <FaInstagram />
+        </a>
+        <a className="footer__link">
+         <FaTwitter />
+        </a>
+        <a className="footer__link">
+          <FaYoutube />
+        </a>
+      </div>
     </div>
   )
 }
