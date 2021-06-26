@@ -31,6 +31,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 4;
 }
 
 .navbar__logo {
@@ -162,7 +163,6 @@ body {
 }
 
 .album__button:hover {
-  /* box-shadow: 0px 0px 4px var(--primaryShadow); */
   color: black;
   border: 1px solid black;
 }
@@ -183,6 +183,27 @@ body {
 .album__button__text--big {
   font-size: 15px;
   font-weight: 500;;
+}
+
+.video {
+  width: 100%;
+  height: 100vh;
+  background: black;  
+
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.video__wrapper {
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.video__player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
 }
 
 .footer {
