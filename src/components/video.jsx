@@ -12,6 +12,7 @@ const Video = () => {
           width="100%"
           height="100%"
           controls="true"
+          light="https://izaktv.pl/wp-content/uploads/2020/04/1234.jpg"
         />
       </div>
     </div>
