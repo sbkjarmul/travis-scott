@@ -1,10 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Oswald:wght@200;300;400;500;600;700&family=Reenie+Beanie&display=swap');
+
+
+:root {
+  --primary: rgb(0, 209, 216);
+  --primaryShadow: rgb(0, 255, 234);
+}
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
 }
 
 .App {
@@ -21,8 +31,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-
 }
 
 .navbar__logo {
@@ -84,6 +92,97 @@
   font-size: 160px;
   color: white;
   font-family: 'Archivo Black', sans-serif;
+}
+
+.album {
+  width: 100%;
+  height: 100vh;
+  background: transparent;
+  padding: 0 96px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+}
+
+.album__image {
+  width: 50%;
+}
+
+.album__caption {
+  width: 50%;
+  padding: 0 80px;
+}
+
+.album__caption--header {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-size: 48px;
+  line-height: 48px;
+}
+
+.album__caption__line {
+  width: 10%;
+  border: 2px solid black;
+  margin: 12px 0;
+}
+
+.album__caption--description {
+  font-weight: 300;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.album__caption--above {
+  font-size: 40px;
+  font-family: 'Reenie Beanie', cursive;
+  color: var(--primary);
+}
+
+.album__button-container {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.album__button {
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  background: none;
+  padding: 8px;
+  color: var(--primary);
+  margin-right: 12px;
+  cursor: pointer;
+  font-size: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all .3s ease;
+}
+
+.album__button:hover {
+  /* box-shadow: 0px 0px 4px var(--primaryShadow); */
+  color: black;
+  border: 1px solid black;
+}
+
+.album__button__icon {
+  font-size: 24px;
+  margin-right: 4px;
+  display: flex;
+}
+
+.album__button__text {
+  font-size: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.album__button__text--big {
+  font-size: 15px;
+  font-weight: 500;;
 }
 
 .footer {
