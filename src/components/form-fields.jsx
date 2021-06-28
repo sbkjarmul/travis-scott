@@ -2,17 +2,15 @@ import React, { useState } from 'react'
 import '../App.css'
 import FormAlert from './form-alert'
 import FormButton from './form-button'
+import RobotChecker from './robot-checker'
 
 const FormFields = ({ setIsForm }) => {
   const [isAlert, setIsAlert] = useState(false);
+  const [isRobotChecker, setIsRobotChecker] = useState(false);
 
   const handleClick = (e) => {
     e.preventDefault();
-    setIsAlert(true);
-    setTimeout(() => {
-      setIsAlert(false);
-      setIsForm(false);
-    }, 1000);
+    setIsRobotChecker(true);
   }
 
   return (
@@ -69,15 +67,15 @@ const FormFields = ({ setIsForm }) => {
             placeholder="Enter your phone"
           />
           <label 
-            htmlFor="content"
+            htmlFor="message"
             className="form__label"
           >
-            Content
+            Message
           </label>
           <textarea
             className="form__input form__input--textarea" 
             type="tel" 
-            name="content" 
+            name="message" 
             placeholder="Write something..."
           />
         </div>
@@ -85,6 +83,14 @@ const FormFields = ({ setIsForm }) => {
           Send
         </FormButton>
       </form>
+      {
+      isRobotChecker ? 
+      <RobotChecker 
+        setIsRobotChecker={setIsRobotChecker} 
+        setIsAlert={setIsAlert} 
+        setIsForm={setIsForm} 
+      /> : ''
+      }
       <FormAlert isAlert={isAlert} />
     </div>
   )
