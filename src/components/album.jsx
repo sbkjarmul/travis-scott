@@ -1,12 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import '../App.css'
 import album from '../assets/images/album.png'
 import { FaApple, FaGooglePlay } from 'react-icons/fa'
 
 const Album = () => {
+  let history = useHistory();
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     history.push('/video');
+  //   }, 10000); 
+  // },[])
+
+  // window.addEventListener('keydown', (e) => {
+  //   if (e.keyCode === 38) {
+  //     setTimeout(() => {
+  //       history.push('/');
+  //     }, 1000);
+  //   }
+
+  //   if (e.keyCode === 40) {
+  //     history.push('/video');
+  //   }
+  // })
+
   return (
     <div className="album">
-      <img className="album__image" src={album}></img>
+      <img className="album__image" src={album} alt="album"></img>
       <div className="album__caption">
         <p className="album__caption--above">Check out!</p>
         <h1 className="album__caption--header">Get the</h1>
@@ -20,7 +40,7 @@ const Album = () => {
             </span>
             <span className="album__button__text">
               <span>Download on the</span>
-              <span class="album__button__text--big">App Store</span>
+              <span className="album__button__text--big">App Store</span>
             </span>
           </button>
           <button className="album__button">
@@ -29,7 +49,7 @@ const Album = () => {
             </span>
             <span className="album__button__text">
               <span>GET IT ON</span>
-              <span class="album__button__text--big">Google Play</span>
+              <span className="album__button__text--big">Google Play</span>
             </span>
           </button>
         </div>
