@@ -3,16 +3,20 @@ import logo from '../assets/images/logo.png'
 import '../App.css'
 import { BsChatDots } from 'react-icons/bs'
 
-const Navbar = ({ setIsForm }) => {
+const Navbar = ({ setIsForm, currentView }) => {
+  const logoClass = currentView === 2 || currentView === 4 ? 'navbar__logo' : 'navbar__logo navbar__logo--white';
+  const buttonClass = currentView === 2 || currentView === 4 ? 'navbar__button' : 'navbar__button navbar__button--white';
+  const buttonIconClass = currentView === 2 || currentView === 4 ? 'navbar__button-icon' : 'navbar__button-icon navbar__button-icon--white';
+
   const handleClick = () => {
     setIsForm(true);
   }
 
   return (
     <div className="navbar">
-      <img className="navbar__logo" src={logo}></img>
-        <button className="navbar__button" onClick={ handleClick }>
-        <span className="navbar__button-icon">
+      <img className={logoClass} src={logo}></img>
+        <button className={buttonClass} onClick={ handleClick }>
+        <span className={buttonIconClass}>
          <BsChatDots />
         </span>
         Contact

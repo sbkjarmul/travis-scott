@@ -1,22 +1,29 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 
-const Controls = () => {
+const Controls = ({ currentView, setCurrentView }) => {
+  const setClass = (number) => {   
+
+    if (currentView === number && currentView === 2 || currentView === number && currentView === 4) {
+      console.log('elo');
+      return 'controls__circle controls__circle--primary  controls__circle--active'
+    } else if (currentView === number ) {
+      return 'controls__circle controls__circle--active'
+    } else 
+      return 'controls__circle'
+  }
+
+
   return (
-    <div className="controls">
-      <NavLink to="/" activeClassName="active" exact>
-        <div className="controls__circle"></div>
-      </NavLink>
-      <NavLink to="/album" activeClassName="active">
-        <div className="controls__circle"></div>
-      </NavLink>
-      <NavLink to="/video" activeClassName="active">
-        <div className="controls__circle"></div>
-      </NavLink>
-      <NavLink to="/events" activeClassName="active">
-        <div className="controls__circle"></div>
-      </NavLink>
-    </div>
+    <ul className={currentView === 2 || currentView === 4 ? 'controls controls--primary' : 'controls' }>
+        {/* <li className={currentView === 1 ? 'controls__circle controls__circle--active' : 'controls__circle'}></li>
+        <li className={currentView === 2 ? 'controls__circle controls__circle--active' : 'controls__circle'}></li>
+        <li className={currentView === 3 ? 'controls__circle controls__circle--active' : 'controls__circle'}></li>
+        <li className={currentView === 4 ? 'controls__circle controls__circle--active' : 'controls__circle'}></li> */}
+        <li className={setClass(1)}></li>
+        <li className={setClass(2)}></li>
+        <li className={setClass(3)}></li>
+        <li className={setClass(4)}></li>
+    </ul>
   )
 }
 
