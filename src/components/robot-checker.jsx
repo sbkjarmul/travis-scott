@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from 'react'
-import { questions } from "../assets/questions"
-import FormButton from './form-button';
+import React, { useState } from 'react'
+import { questions } from "../assets/helpers/questions"
 
 const RobotChecker = ({ setIsRobotChecker, setIsAlert, setIsForm }) => {
-  const RANDOM_ID = Math.floor(Math.random() * questions.length - 1) + 1;
-  const [question, setQuestion] = useState(questions[RANDOM_ID]);
+  const number = Math.floor(Math.random() * questions.length - 1) + 1;
+  const [question, setQuestion] = useState(questions[number]);
 
   const checkAndColorAnswer = (e) => {
-    if (e.target.id === question.correct) {
-      e.target.style.backgroundColor = '#00D667';
+    const isCorrectAnswer = e.target.id === question.correct;
+    const answer = e.target;
+
+    if (isCorrectAnswer) {
+      answer.style.backgroundColor = '#00D667';
       setTimeout(() => {
         closeWindows();
       }, 500)
     }
 
-    if (e.target.id != question.correct) {
-      e.target.style.backgroundColor = '#F8115A';
+    if (!isCorrectAnswer) {
+      answer.style.backgroundColor = '#F8115A';
       reloadQuestion();
     }
   }
@@ -57,7 +59,6 @@ const RobotChecker = ({ setIsRobotChecker, setIsAlert, setIsForm }) => {
             {question.d}
           </li>
         </ul>
-      {/* <FormButton onClick={closeWindows}>OK</FormButton> */}
     </div>
   )
 }

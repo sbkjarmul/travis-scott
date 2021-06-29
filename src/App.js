@@ -4,6 +4,7 @@ import Hero from './components/hero'
 import Album from './components/album'
 import Navbar from './components/navbar'
 import Video from './components/video'
+import Events from './components/events'
 import Footer from './components/footer'
 import { BrowserRouter as Router, Switch, Route, useHistory } from 'react-router-dom'
 import Controls from './components/controls';
@@ -26,6 +27,7 @@ function App() {
           <Hero />
           <Album />
           <Video />
+          <Events />
           <Controls />
           <Form isForm={isForm} setIsForm={setIsForm} />
         <Footer />

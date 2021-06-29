@@ -4,9 +4,7 @@ import '../App.css'
 import album from '../assets/images/album.png'
 import { FaApple, FaGooglePlay } from 'react-icons/fa'
 
-const Album = () => {
-  let history = useHistory();
-
+const Events = () => {
   return (
     <div className="album">
       <img className="album__image" src={album} alt="album"></img>
@@ -41,4 +39,4 @@ const Album = () => {
   )
 }
 
-export default Album;
+export default Events;
