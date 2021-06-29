@@ -3,17 +3,11 @@ import '../App.css'
 import HeroCaption from './hero-caption'
 import { useHistory } from 'react-router-dom'
 
-const Hero = () => {
-  let history = useHistory();
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     history.push('/album');
-  //   }, 10000); 
-  // },[])  
+const Hero = ({ currentView }) => {
   
 
   return (
-    <div className="hero">
+    <div className={currentView === 1 ? 'hero' : 'hero hero--off'}>
       <HeroCaption />
     </div>
   )

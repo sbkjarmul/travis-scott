@@ -13,6 +13,9 @@ const Controls = () => {
       <NavLink to="/video" activeClassName="active">
         <div className="controls__circle"></div>
       </NavLink>
+      <NavLink to="/events" activeClassName="active">
+        <div className="controls__circle"></div>
+      </NavLink>
     </div>
   )
 }

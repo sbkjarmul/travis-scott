@@ -4,11 +4,10 @@ import '../App.css'
 import album from '../assets/images/album.png'
 import { FaApple, FaGooglePlay } from 'react-icons/fa'
 
-const Album = () => {
-  let history = useHistory();
+const Album = ({ currentView }) => {
 
   return (
-    <div className="album">
+    <div className={currentView === 2 ? 'album' : 'album album--off'}>
       <img className="album__image" src={album} alt="album"></img>
       <div className="album__caption">
         <p className="album__caption--above">Check out!</p>

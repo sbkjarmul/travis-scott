@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { questions } from "../assets/helpers/questions"
 
-const RobotChecker = ({ setIsRobotChecker, setIsAlert, setIsForm }) => {
+const RobotChecker = ({ setIsRobotChecker, setIsAlert, setIsForm, clearFormFields }) => {
   const number = Math.floor(Math.random() * questions.length - 1) + 1;
   const [question, setQuestion] = useState(questions[number]);
 
@@ -39,6 +39,7 @@ const RobotChecker = ({ setIsRobotChecker, setIsAlert, setIsForm }) => {
     setTimeout(() => {
       setIsAlert(false);
       setIsForm(false);
+      clearFormFields();
     }, 1000);
   }
 

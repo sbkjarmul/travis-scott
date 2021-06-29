@@ -20,9 +20,9 @@ export const questions = [
     {
       id: 3,
       question: "Where he was born?",
-      a: "Houston, Teksas",
-      b: "Los Angeles, Kalifornia",
-      c: "Chicago, Ilinois",
+      a: "Houston, Texas",
+      b: "Los Angeles, California",
+      c: "Chicago, Illinois",
       d: "New York, New York",
       correct: "a"
     },

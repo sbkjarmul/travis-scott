@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player'
 import { useHistory } from  'react-router-dom'
 import '../App.css'
 
-const Video = () => {
+const Video = ({ currentView }) => {
   const [play, setPlay] = useState(false);
 
   const turnOnPlayer = () => {
@@ -12,7 +12,7 @@ const Video = () => {
 
   return (
     <div 
-      className="video" 
+      className={currentView === 3 ? 'video' : 'video video--off'}
       onClick={turnOnPlayer}
     >
       <div className="video__wrapper">
@@ -24,6 +24,7 @@ const Video = () => {
           controls={true}
           playing={play}
           light="https://i.redd.it/cub3q3orcxq31.jpg"
+          loop={true}
         />
       </div>
     </div>
