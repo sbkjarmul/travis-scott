@@ -10,7 +10,6 @@ const Controls = ({ currentView }) => {
       return 'controls__circle'
   }
 
-
   return (
     <ul className={currentView === 2 || currentView === 4 ? 'controls controls--primary' : 'controls' }>
         <li className={setClass(1)}></li>

@@ -8,9 +8,10 @@ const useForm = (validate, setIsRobotChecker) => {
     phone: '',
     message: ''
   });
+
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  
   const handleChange = e => {
     const { name, value } = e.target;
 

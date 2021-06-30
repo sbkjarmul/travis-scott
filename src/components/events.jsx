@@ -8,7 +8,7 @@ import e5 from '../assets/images/events/e5.jpg'
 import e6 from '../assets/images/events/e6.jpg' 
 import e7 from '../assets/images/events/e7.jpg' 
 import e8 from '../assets/images/events/e8.jpg' 
-import e9 from '../assets/images/events/e9.jpg' 
+import e9 from '../assets/images/events/e9.jpg'
 
 const Events = ({ currentView, direction }) => {
   const setClass = () => {
