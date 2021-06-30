@@ -41,7 +41,6 @@ const Video = ({ currentView, direction }) => {
           controls={true}
           playing={play}
           light="https://i.redd.it/cub3q3orcxq31.jpg"
-          loop={true}
         />
       </div>
     </div>

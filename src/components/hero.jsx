@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import '../App.css'
 import HeroCaption from './hero-caption'
-import { useHistory } from 'react-router-dom'
 
 const Hero = ({ currentView, direction }) => {
   const setClass = () => {

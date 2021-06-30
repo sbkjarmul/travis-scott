@@ -1,7 +1,14 @@
 import React from 'react'
 import '../App.css'
-import album from '../assets/images/album.png'
-import { FaApple, FaGooglePlay } from 'react-icons/fa'
+import e1 from '../assets/images/events/e1.jpg' 
+import e2 from '../assets/images/events/e2.jpg' 
+import e3 from '../assets/images/events/e3.jpg' 
+import e4 from '../assets/images/events/e4.jpg' 
+import e5 from '../assets/images/events/e5.jpg' 
+import e6 from '../assets/images/events/e6.jpg' 
+import e7 from '../assets/images/events/e7.jpg' 
+import e8 from '../assets/images/events/e8.jpg' 
+import e9 from '../assets/images/events/e9.jpg' 
 
 const Events = ({ currentView, direction }) => {
   const setClass = () => {
@@ -24,31 +31,87 @@ const Events = ({ currentView, direction }) => {
 
   return (
     <div className={setClass()}>
-      <img className="album__image" src={album} alt="album"></img>
-      <div className="album__caption">
-        <p className="album__caption--above">Check out!</p>
-        <h1 className="album__caption--header">Get the</h1>
-        <h1 className="album__caption--header">new album now!</h1>
-        <div className="album__caption__line"></div>
-        <p className="album__caption--description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis laudantium dolore suscipit optio itaque voluptates veniam placeat, laboriosam omnis ex!</p>
-        <div className="album__button-container">
-          <button className="album__button">
-            <span className="album__button__icon">
-            <FaApple />
-            </span>
-            <span className="album__button__text">
-              <span>Download on the</span>
-              <span className="album__button__text--big">App Store</span>
-            </span>
+      <div className="events__box">
+        <p className="events__box--above">Book it!</p>
+        <h1 className="events__box--header">Upcoming events</h1>
+        <div className="events__box__line"></div>
+        <p className="events__box--description">Buy Travis Scott tickets from the official website. Find Travis Scott tour schedule, concert details, reviews and photos.</p>
+        <div className="events__images">
+          <img src={e1} className="events__image" alt="event"/>
+          <img src={e2} className="events__image"  alt="event"/>
+          <img src={e3} className="events__image"  alt="event"/>
+          <img src={e4} className="events__image"  alt="event"/>
+          <img src={e5} className="events__image"  alt="event"/>
+          <img src={e6} className="events__image"  alt="event"/>
+          <img src={e7} className="events__image"  alt="event"/>
+          <img src={e8} className="events__image"  alt="event"/>
+          <img src={e9} className="events__image"  alt="event"/>
+        </div>
+      </div>
+      <div className="events__box">
+        <div className="events__event-box">
+          <div className="events__date">
+            <span>Mar</span>
+            <span className="events__date--number">14</span>
+          </div>
+          <div className="events__place">
+            <span className="events__place--local">ARTSCAPE THEATRE</span>
+            <span>Cape Town, South Africa</span>
+          </div>
+          <button className="events__button">
+            BUY TICKETS!
           </button>
-          <button className="album__button">
-            <span className="album__button__icon">
-            <FaGooglePlay />
-            </span>
-            <span className="album__button__text">
-              <span>GET IT ON</span>
-              <span className="album__button__text--big">Google Play</span>
-            </span>
+        </div>
+        <div className="events__event-box">
+          <div className="events__date">
+            <span>Mar</span>
+            <span className="events__date--number">21</span>
+          </div>
+          <div className="events__place">
+            <span className="events__place--local">CITY AUDITORIUM</span>
+            <span>Okayama, Japan</span>
+          </div>
+          <button className="events__button events__button--sold-out">
+            SOLD OUT!
+          </button>
+        </div>
+        <div className="events__event-box">
+          <div className="events__date">
+            <span>Mar</span>
+            <span className="events__date--number">28</span>
+          </div>
+          <div className="events__place">
+            <span className="events__place--local">ROYAL THEATRE</span>
+            <span>Brussels, Belgium</span>
+          </div>
+          <button className="events__button">
+            BUY TICKETS!
+          </button>
+        </div>
+        <div className="events__event-box">
+          <div className="events__date">
+            <span>APR</span>
+            <span className="events__date--number">05</span>
+          </div>
+          <div className="events__place">
+            <span className="events__place--local">FELLOWS MANSION</span>
+            <span>Copenhagen, Denmark</span>
+          </div>
+          <button className="events__button events__button--sold-out">
+            SOLD OUT!
+          </button>
+        </div>
+        <div className="events__event-box">
+          <div className="events__date">
+            <span>APR</span>
+            <span className="events__date--number">12</span>
+          </div>
+          <div className="events__place">
+            <span className="events__place--local">SIBELIUS ACADEMY</span>
+            <span>Helsinki, Finland</span>
+          </div>
+          <button className="events__button">
+            BUY TICKETS!
           </button>
         </div>
       </div>

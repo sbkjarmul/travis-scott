@@ -2,7 +2,6 @@ import React from 'react'
 
 const Controls = ({ currentView }) => {
   const setClass = (number) => {   
-
     if (currentView === number && currentView === 2 || currentView === number && currentView === 4) {
       return 'controls__circle controls__circle--primary  controls__circle--active'
     } else if (currentView === number ) {

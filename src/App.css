@@ -33,7 +33,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 4;
+  z-index: 5;
 }
 
 .navbar__logo {
@@ -130,34 +130,40 @@ body {
   padding: 0 80px;
 }
 
-.album__caption--header {
+.album__caption--header,
+.events__box--header {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   font-size: 48px;
   line-height: 48px;
 }
 
-.album__caption__line {
+.album__caption__line,
+.events__box__line {
   width: 10%;
   border: 2px solid black;
   margin: 12px 0;
 }
 
-.album__caption--description {
+.album__caption--description,
+.events__box--description {
   font-weight: 300;
   font-size: 12px;
   margin-bottom: 16px;
 }
 
-.album__caption--above {
+.album__caption--above,
+.events__box--above {
   font-size: 40px;
   font-family: 'Reenie Beanie', cursive;
   color: var(--primary);
 }
 
-.album__button-container {
+.album__button-container,
+.events__event-box {
   display: flex;
   margin-bottom: 50px;
+  align-items: center;
 }
 
 .album__button {
@@ -239,7 +245,7 @@ body {
   right: calc(96px + 24px);
   width: auto;
   height: fit-content;
-  z-index: 3;
+  z-index: 5;
 }
 
 .controls::before {
@@ -291,6 +297,7 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  z-index: 5;
 }
 
 .footer__icons {
@@ -330,12 +337,11 @@ body {
   width: 50vw;
   height: 100%;
   padding: 32px 64px;
-  /* background: black; */
   background: white;
   color: black;
-  /* color: white; */
   transition-duration: 1s;
   z-index: 5;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
 .form__container--active {
@@ -368,6 +374,7 @@ body {
   width: 100%;
   height: 48px;
   padding: 8px;
+  margin-bottom: 4px;
 }
 
 .form__input:focus {
@@ -381,10 +388,26 @@ body {
 
 .form__button {
   margin-top: 32px;
-  width: 100%;
-  padding: 16px;
+  border: 1px solid black;
+  border-radius: 6px;
+  background: none;
+  width: 140px;
+  padding: 8px 24px;
+  height: fit-content;
+  font-weight: 500;
   font-size: 18px;
   cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s ease;
+}
+
+.form__button:hover {
+  color: var(--primary);
+  border: 1px solid var(--primary);
 }
 
 .form__alert {
@@ -428,7 +451,9 @@ body {
 }
 
 .robot-checker__question {
-  font-size: 20px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 .robot-checker__answer-list {
@@ -443,31 +468,17 @@ body {
   color: black;
 }
 
-/* .hero,
-.album,
-.video, 
-.events {
-  position: absolute;
-  top: 0;
-  animation-name: slide-down-in;
-  animation-duration: 2s;
-  animation-timing-function: ease;
-  transition-duration: 2s;
-  transform: translateY(0%);
-} */
-
 .hero,
 .album,
 .video, 
 .events {
   position: absolute;
   top: 0;
-  /* animation-name: slide-up-in; */
   animation-duration: 2s;
   animation-timing-function: ease;
-
   transform: translateY(0%);
 }
+
 
 .slide-up-in {
   animation-name: slide-up-in;
@@ -485,76 +496,49 @@ body {
   animation-name: slide-down-out;
 }
 
-/* .hero--off,
-.album--off,
-.video--off,
-.events--off {
-  animation-name: slide-down-out;
-  animation-duration: 2s;
-  animation-timing-function: ease;
-  transform: translateY(100%); 
-} */
-
 .hero--off,
 .album--off,
 .video--off,
 .events--off {
-  /* animation-name: slide-up-out; */
   animation-duration: 2s;
   animation-timing-function: ease;
-  transform: translateY(100%); 
-}
-
-.view-counter {
-  position: absolute;
-  left: 30px;
-  top: 30px;
-  z-index: 6;
+  opacity: 0; 
+  transition-delay: 2s;
 }
 
 @keyframes slide-up-in {
   0% {
     transform: translateY(100%);
-    z-index: 1;
   }
   100% {
     transform: translateY(0%);
-    z-index: 1;
   }
 }
 
 @keyframes slide-up-out {
   0% {
     transform: translateY(0%);
-    /* z-index: -1; */
   }
   100% {
     transform: translateY(-100%);
-    display: none;
-    /* z-index: -1; */
   }
 }
 
 @keyframes slide-down-in {
   0% {
     transform: translateY(-100%);
-    z-index: 1;
   }
   100% {
     transform: translateY(0%);
-    z-index: 1;
   }
 }
 
 @keyframes slide-down-out {
   0% {
     transform: translateY(0%);
-    z-index: -1;
   }
   100% {
     transform: translateY(100%);
-    display: none;
-    z-index: -1;
   }
 }
 
@@ -562,7 +546,7 @@ body {
 .right-arrow {
   position: fixed;
   right: 104px;
-  z-index: 4;
+  z-index: 5;
   font-size: 40px;
   cursor: pointer;
   color: white;
@@ -581,4 +565,100 @@ body {
 .right-arrow {
   bottom: 160px;
   transform: rotate(180deg);
+}
+
+.events__box {
+  width: 50%;
+  padding: 0 120px;
+}
+
+.events__date {
+  width: 64px;
+  height: 64px;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+}
+
+.events__date--number {
+  font-size: 40px;
+  font-family: 'Reenie Beanie', cursive;
+  color: var(--primary);
+  line-height: 18px;
+}
+
+.events__place {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  padding: 8px 24px;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.events__place--local {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+}
+
+.events__button {
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  background: none;
+  width: 140px;
+  padding: 8px 24px;
+  height: fit-content;
+  color: var(--primary);
+  margin-right: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Oswald', sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all .3s ease;
+}
+
+.events__button:hover {
+  color: black;
+  border: 1px solid black;
+}
+
+.events__button--sold-out {
+  box-shadow: none;
+}
+
+.events__button--sold-out:hover {
+  border: none;
+}
+
+.events__event-box {
+  margin-bottom: 18px;
+}
+
+.events__images {
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  grid-template-rows: 150px 150px 150px;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.events__image {
+  width: 150px;
 }
