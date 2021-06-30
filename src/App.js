@@ -12,16 +12,29 @@ import Form from './components/form';
 import { IoTriangle } from 'react-icons/io5'
 
 function App() {
-  const viewsCount = 4
+  const viewsCount = 4;
   const [currentView, setCurrentView] = useState(1);
   const [isForm, setIsForm] = useState(false);
+  const [direction, setDirection] = useState('up');
 
   const nextView = () => {
     setCurrentView(currentView === viewsCount ? 1 : currentView + 1);
+    setDirection('up');
   }
 
   const previousView = () => {
     setCurrentView(currentView === 1 ? viewsCount : currentView - 1);
+    setDirection('down');
+  }
+
+  const setArrowsClass = (arrow) => {
+    const isWhiteBackground = currentView === 2 || currentView === 4;
+   
+    if (isWhiteBackground) {
+      return `${arrow}-arrow ${arrow}-arrow--black`;
+    } else {
+      return `${arrow}-arrow`;
+    }
   }
 
   useEffect(() => {
@@ -39,14 +52,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* <h1 className="view-counter">{currentView}</h1> */}
         <Navbar setIsForm={setIsForm} currentView={currentView} />
-        <IoTriangle className="left-arrow" onClick={previousView} />
-        <IoTriangle className="right-arrow" onClick={nextView} />
-          <Hero currentView={currentView} />
-          <Album currentView={currentView} />
-          <Video currentView={currentView} />
-          <Events currentView={currentView} />
+        <IoTriangle className={setArrowsClass('left')} onClick={previousView} />
+        <IoTriangle className={setArrowsClass('right')} onClick={nextView} />
+          <Hero currentView={currentView} direction={direction} />
+          <Album currentView={currentView} direction={direction} />
+          <Video currentView={currentView} direction={direction} />
+          <Events currentView={currentView} direction={direction} />
           <Controls currentView={currentView} setCurrentView={setCurrentView} />
           <Form isForm={isForm} setIsForm={setIsForm} />
         <Footer />

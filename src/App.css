@@ -309,14 +309,6 @@ body {
   filter: drop-shadow(0px 0px 4px rgb(0, 255, 234));
 }
 
-/* .show {
-  display: block;
-}
-
-.hide {
-  display: none;
-} */
-
 .form {
   display: flex;
   flex-direction: column;
@@ -451,25 +443,63 @@ body {
   color: black;
 }
 
+/* .hero,
+.album,
+.video, 
+.events {
+  position: absolute;
+  top: 0;
+  animation-name: slide-down-in;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  transition-duration: 2s;
+  transform: translateY(0%);
+} */
+
 .hero,
 .album,
 .video, 
 .events {
   position: absolute;
   top: 0;
-
-  animation-name: slide-up;
+  /* animation-name: slide-up-in; */
   animation-duration: 2s;
   animation-timing-function: ease;
-  transition-duration: 2s;
+
   transform: translateY(0%);
 }
+
+.slide-up-in {
+  animation-name: slide-up-in;
+}
+
+.slide-up-out {
+  animation-name: slide-up-out;
+}
+
+.slide-down-in {
+  animation-name: slide-down-in;
+}
+
+.slide-down-out {
+  animation-name: slide-down-out;
+}
+
+/* .hero--off,
+.album--off,
+.video--off,
+.events--off {
+  animation-name: slide-down-out;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  transform: translateY(100%); 
+} */
 
 .hero--off,
 .album--off,
 .video--off,
 .events--off {
-  animation-name: slide-down;
+  /* animation-name: slide-up-out; */
   animation-duration: 2s;
   animation-timing-function: ease;
   transform: translateY(100%); 
@@ -482,23 +512,49 @@ body {
   z-index: 6;
 }
 
-@keyframes slide-up {
+@keyframes slide-up-in {
   0% {
     transform: translateY(100%);
+    z-index: 1;
   }
   100% {
     transform: translateY(0%);
-    /* display: none; */
+    z-index: 1;
   }
 }
 
-@keyframes slide-down {
+@keyframes slide-up-out {
   0% {
     transform: translateY(0%);
+    /* z-index: -1; */
   }
   100% {
     transform: translateY(-100%);
     display: none;
+    /* z-index: -1; */
+  }
+}
+
+@keyframes slide-down-in {
+  0% {
+    transform: translateY(-100%);
+    z-index: 1;
+  }
+  100% {
+    transform: translateY(0%);
+    z-index: 1;
+  }
+}
+
+@keyframes slide-down-out {
+  0% {
+    transform: translateY(0%);
+    z-index: -1;
+  }
+  100% {
+    transform: translateY(100%);
+    display: none;
+    z-index: -1;
   }
 }
 
@@ -509,6 +565,13 @@ body {
   z-index: 4;
   font-size: 40px;
   cursor: pointer;
+  color: white;
+  transition-duration: 1s;
+}
+
+.left-arrow--black,
+.right-arrow--black {
+  color: var(--primary);
 }
 
 .left-arrow {

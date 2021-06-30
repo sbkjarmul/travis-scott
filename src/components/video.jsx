@@ -1,18 +1,35 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import ReactPlayer from 'react-player'
-import { useHistory } from  'react-router-dom'
 import '../App.css'
 
-const Video = ({ currentView }) => {
+const Video = ({ currentView, direction }) => {
   const [play, setPlay] = useState(false);
 
   const turnOnPlayer = () => {
     setPlay(play => !play);
   }
 
+  const setClass = () => {
+    if (currentView === 3 && direction === 'up') {
+      return 'video slide-up-in'; 
+    }
+
+    if (!(currentView === 3) && direction === 'up') {
+      return 'video video--off slide-up-out'; 
+    }
+
+    if (currentView === 3 && direction === 'down') {
+      return 'video slide-down-in'; 
+    }
+
+    if (!(currentView === 3) && direction === 'down') {
+      return 'video video--off slide-down-out'; 
+    }
+  }
+
   return (
     <div 
-      className={currentView === 3 ? 'video' : 'video video--off'}
+      className={setClass()}
       onClick={turnOnPlayer}
     >
       <div className="video__wrapper">

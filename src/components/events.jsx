@@ -1,12 +1,29 @@
-import React, { useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import React from 'react'
 import '../App.css'
 import album from '../assets/images/album.png'
 import { FaApple, FaGooglePlay } from 'react-icons/fa'
 
-const Events = ({ currentView }) => {
+const Events = ({ currentView, direction }) => {
+  const setClass = () => {
+    if (currentView === 4 && direction === 'up') {
+      return 'events slide-up-in'; 
+    }
+
+    if (!(currentView === 4) && direction === 'up') {
+      return 'events events--off slide-up-out'; 
+    }
+
+    if (currentView === 4 && direction === 'down') {
+      return 'events slide-down-in'; 
+    }
+
+    if (!(currentView === 4) && direction === 'down') {
+      return 'events events--off slide-down-out'; 
+    }
+  }
+
   return (
-    <div className={currentView === 4 ? 'events' : 'events events--off'}>
+    <div className={setClass()}>
       <img className="album__image" src={album} alt="album"></img>
       <div className="album__caption">
         <p className="album__caption--above">Check out!</p>
