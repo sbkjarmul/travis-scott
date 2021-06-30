@@ -506,6 +506,10 @@ body {
   transition-delay: 2s;
 }
 
+.hero {
+  z-index: 4;
+}
+
 @keyframes slide-up-in {
   0% {
     transform: translateY(100%);
@@ -662,3 +666,4 @@ body {
 .events__image {
   width: 150px;
 }
+

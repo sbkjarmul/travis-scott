@@ -15,7 +15,7 @@ function App() {
   const viewsCount = 4;
   const [currentView, setCurrentView] = useState(1);
   const [isForm, setIsForm] = useState(false);
-  const [direction, setDirection] = useState('up');
+  const [direction, setDirection] = useState('start');
 
   const nextView = () => {
     setDirection('up');
@@ -52,7 +52,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <div className="tech">Direction: {direction}, View:{currentView}</div>
+      {/* <div className="tech">Direction: {direction}, View:{currentView}</div> */}
         <Navbar setIsForm={setIsForm} currentView={currentView} />
         <IoTriangle className={setArrowsClass('left')} onClick={previousView} />
         <IoTriangle className={setArrowsClass('right')} onClick={nextView} />

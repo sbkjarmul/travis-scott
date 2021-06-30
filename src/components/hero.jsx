@@ -4,6 +4,10 @@ import HeroCaption from './hero-caption'
 
 const Hero = ({ currentView, direction }) => {
   const setClass = () => {
+    if (currentView === 1 && direction === 'start') {
+      return 'hero';
+    }
+
     if (currentView === 1 && direction === 'up') {
       return 'hero slide-up-in'; 
     }
