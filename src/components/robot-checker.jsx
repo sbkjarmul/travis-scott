@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../styles/robot-checker.css'
 import { questions } from "../assets/helpers/questions"
 
 const RobotChecker = ({ setIsRobotChecker, setIsAlert, setIsForm, clearFormFields }) => {

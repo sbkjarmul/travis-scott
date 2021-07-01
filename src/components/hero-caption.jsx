@@ -19,7 +19,7 @@ const HeroCaption = ({ isForm, setIsForm }) => {
     <div className="hero__caption">
       <h1 className="hero__text">TRAVIS</h1>
       <p className="hero__text--under">SCOTT</p>
-      <button className={setClass()} onClick={handleClick}>Write to me</button>
+      <button className={setClass()} onClick={handleClick}>Contact me</button>
     </div>
   )
 }

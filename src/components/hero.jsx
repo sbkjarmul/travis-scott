@@ -1,5 +1,6 @@
 import React from 'react'
 import '../App.css'
+import '../styles/hero.css'
 import HeroCaption from './hero-caption'
 
 const Hero = ({ currentView, direction, isForm, setIsForm }) => {

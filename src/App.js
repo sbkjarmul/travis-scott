@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css';
+import './styles/controls.css'
 import Hero from './components/hero'
 import Album from './components/album'
 import Navbar from './components/navbar'

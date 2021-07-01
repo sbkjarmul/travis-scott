@@ -1,0 +1,125 @@
+.controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: calc(96px + 24px);
+  width: auto;
+  height: fit-content;
+  z-index: 5;
+}
+
+.controls::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  content: '';
+  height: 120px;
+  border-left: 2px solid white;
+  z-index: -1;
+}
+
+.controls--primary::before {
+  border-left: 2px solid var(--primary);
+}
+
+.controls__circle {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 15px;
+  height: 15px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  border: 2px solid white;
+  z-index: 5;
+  opacity: 0;
+}
+
+.controls__circle--primary {
+  background-color: white;
+  border: 2px solid var(--primary);
+}
+
+.controls__circle--active {
+  opacity: 1;
+}
+
+.left-arrow,
+.right-arrow {
+  position: fixed;
+  right: 104px;
+  z-index: 5;
+  font-size: 40px;
+  cursor: pointer;
+  color: white;
+  transition-duration: 1s;
+}
+
+.left-arrow--black,
+.right-arrow--black {
+  color: var(--primary);
+}
+
+.left-arrow {
+  top: 160px;
+}
+
+.right-arrow {
+  bottom: 160px;
+  transform: rotate(180deg);
+}
+
+
+.slide-up-in {
+  animation-name: slide-up-in;
+}
+
+.slide-up-out {
+  animation-name: slide-up-out;
+}
+
+.slide-down-in {
+  animation-name: slide-down-in;
+}
+
+.slide-down-out {
+  animation-name: slide-down-out;
+}
+
+@keyframes slide-up-in {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-up-out {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slide-down-in {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-down-out {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}

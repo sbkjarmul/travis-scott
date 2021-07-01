@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../assets/images/logo.png'
 import '../App.css'
+import '../styles/navbar.css'
 import { BsChatDots } from 'react-icons/bs'
 
 const Navbar = ({ setIsForm, currentView }) => {
@@ -19,7 +20,9 @@ const Navbar = ({ setIsForm, currentView }) => {
         <span className={buttonIconClass}>
          <BsChatDots />
         </span>
+        <span className="navbar__button-text">   
         Contact
+        </span>
       </button>
     </div>
   )

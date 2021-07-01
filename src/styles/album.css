@@ -1,0 +1,142 @@
+
+.album {
+  width: 100%;
+  height: 100vh;
+  background: white;
+  padding: 0 96px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+}
+
+.album__image {
+  width: 50%;
+}
+
+.album__caption {
+  width: 50%;
+  padding: 0 80px;
+}
+
+.album__caption--header {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-size: 48px;
+  line-height: 48px;
+}
+
+.album__caption__line {
+  width: 10%;
+  border: 2px solid black;
+  margin: 12px 0;
+}
+
+.album__caption--description {
+  font-weight: 300;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.album__caption--above{
+  font-size: 40px;
+  font-family: 'Reenie Beanie', cursive;
+  color: var(--primary);
+}
+
+.album__button-container {
+  display: flex;
+  margin-bottom: 50px;
+  align-items: center;
+}
+
+.album__button {
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  background: none;
+  padding: 8px;
+  color: var(--primary);
+  margin-right: 12px;
+  cursor: pointer;
+  font-size: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all .3s ease;
+}
+
+.album__button:hover {
+  color: black;
+  border: 1px solid black;
+}
+
+.album__button__icon {
+  font-size: 24px;
+  margin-right: 4px;
+  display: flex;
+}
+
+.album__button__text {
+  font-size: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.album__button__text--big {
+  font-size: 15px;
+  font-weight: 500;;
+}
+
+.album {
+  position: absolute;
+  top: 0;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  transform: translateY(0%);
+}
+
+.album--off {
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  opacity: 0;
+  pointer-events: none;
+  transition-delay: 2s;
+}
+
+@media (max-width: 997.96px) {
+  .album {
+    position: relative;
+  }
+
+  .albums {
+    height: fit-content;
+  }
+
+  .album {
+    padding-top: 96px;
+    padding-bottom: 96px;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+  }
+
+  .album__image,
+  .album__caption {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .album {
+    padding-left: 24px;
+    padding-right: 48px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .album__caption {
+    padding: 0;
+  }
+}
