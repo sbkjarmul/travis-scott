@@ -3,7 +3,6 @@ import '../App.css'
 import HeroCaption from './hero-caption'
 
 const Hero = ({ currentView, direction, isForm, setIsForm }) => {
-  
   const setClass = () => {
     const isMobile = window.screen.width < 992;
     
