@@ -20,6 +20,7 @@ body {
 .App {
   width: 100%;
   max-height: 100vh;
+  overflow: hidden;
 }
 
 .navbar {
@@ -318,6 +319,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: scroll;
 }
 
 .form__inputs {
@@ -343,14 +345,19 @@ body {
 
 .form__container--active {
   display: block;
+  top: 0;
   right: 0;
+  height: fit-content;
+  position: fixed;
+  overflow: scroll;
+  height: 100%;
 }
 
 .form__close {
   position: absolute;
   right: 16px;
   top: 16px;
-  font-size: 16px;
+  font-size: 24px;
   color: black;
   background: none;
   border: none;
@@ -665,6 +672,14 @@ body {
 }
 
 @media (max-width: 997.96px) {
+  .body {
+    overflow: visible;
+  }
+
+  .App {
+    overflow: visible;
+  }
+
   .hero {
     background-position: center;
   }
@@ -674,6 +689,12 @@ body {
   .video,
   .events {
     position: relative;
+  }
+
+  .album, 
+  .video,
+  .events {
+    height: fit-content;
   }
 
   .hero__caption {
@@ -708,5 +729,59 @@ body {
     justify-content: center;
     margin-top: 48px;
     margin-bottom: 96px;
+  }
+
+  .form__container {
+    width: 100vw;
+    right: -100vw;
+    padding: 48px 80px;
+  }
+
+  .form__container--active {
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .navbar {
+    padding: 16px 24px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero__caption {
+    font-size: 120px;
+  }
+
+  .album {
+    padding-left: 24px;
+    padding-right: 48px;
+  }
+
+  .events {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .footer {
+    display: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero__caption {
+    display: none;
+  }
+
+  .events__images {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: auto;
+    margin-bottom: 48px;
+  }
+
+  .events__image {
+    width: 100%;
   }
 }
