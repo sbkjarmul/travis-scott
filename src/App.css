@@ -770,6 +770,12 @@ body {
 }
 
 @media (max-width: 575.98px) {
+
+  .album__caption {
+    padding: 0;
+
+  }
+
   .hero__caption {
     display: none;
   }
@@ -783,5 +789,32 @@ body {
 
   .events__image {
     width: 100%;
+  }
+
+  .navbar__logo {
+    height: 32px;
+  }
+
+  .events__button {
+    width: 64px;
+    font-size: 12px;
+  }
+  .events__place {
+    font-size: 10px;
+  }
+
+  .events__place--local {
+    font-size: 12px;
+  }
+
+  .events__date {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .events__date--number{
+    font-size: 20px;
+    line-height: 10px;
   }
 }
