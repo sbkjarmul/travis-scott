@@ -10,6 +10,12 @@ const Video = ({ currentView, direction }) => {
   }
 
   const setClass = () => {
+    const isMobile = window.screen.width < 992;
+    
+    if (isMobile) {
+      return 'video';
+    }
+
     if (currentView === 3 && direction === 'up') {
       return 'video slide-up-in'; 
     }

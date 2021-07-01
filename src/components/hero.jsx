@@ -3,7 +3,15 @@ import '../App.css'
 import HeroCaption from './hero-caption'
 
 const Hero = ({ currentView, direction }) => {
+
+  
   const setClass = () => {
+    const isMobile = window.screen.width < 992;
+    
+    if (isMobile) {
+      return 'hero';
+    }
+
     if (currentView === 1 && direction === 'start') {
       return 'hero';
     }

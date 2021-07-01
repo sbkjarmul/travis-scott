@@ -5,6 +5,12 @@ import { FaApple, FaGooglePlay } from 'react-icons/fa'
 
 const Album = ({ currentView, direction }) => {
   const setClass = () => {
+    const isMobile = window.screen.width < 992;
+    
+    if (isMobile) {
+      return 'album';
+    }
+
     if (currentView === 2 && direction === 'up') {
       return 'album slide-up-in'; 
     }

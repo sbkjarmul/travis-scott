@@ -1,7 +1,16 @@
 import React from 'react'
+import '../App.css'
 
 const Controls = ({ currentView }) => {
-  const setClass = (number) => {   
+  const setControlsClass = () => {
+    if (currentView === 2 || currentView === 4) {
+      return 'controls controls--primary';
+    }
+
+    return 'controls';
+  }
+
+  const setCircleClass = (number) => {   
     if (currentView === number && currentView === 2 || currentView === number && currentView === 4) {
       return 'controls__circle controls__circle--primary  controls__circle--active'
     } else if (currentView === number ) {
@@ -11,11 +20,11 @@ const Controls = ({ currentView }) => {
   }
 
   return (
-    <ul className={currentView === 2 || currentView === 4 ? 'controls controls--primary' : 'controls' }>
-        <li className={setClass(1)}></li>
-        <li className={setClass(2)}></li>
-        <li className={setClass(3)}></li>
-        <li className={setClass(4)}></li>
+    <ul className={setControlsClass()}>
+        <li className={setCircleClass(1)}></li>
+        <li className={setCircleClass(2)}></li>
+        <li className={setCircleClass(3)}></li>
+        <li className={setCircleClass(4)}></li>
     </ul>
   )
 }

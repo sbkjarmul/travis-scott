@@ -16,6 +16,12 @@ function App() {
   const [currentView, setCurrentView] = useState(1);
   const [isForm, setIsForm] = useState(false);
   const [direction, setDirection] = useState('start');
+  const isMobile = window.screen.width < 992;
+
+  const turnOffViews = () => {
+    const bodyEl = document.querySelector('body');
+    bodyEl.style.overflow = 'visible';
+  }
 
   const nextView = () => {
     setDirection('up');
@@ -47,20 +53,25 @@ function App() {
         nextView();
       }
     })
-  },[currentView])
+  },[currentView]);
+
+  useEffect(() => {
+    turnOffViews();
+  },[])
 
   return (
     <Router>
       <div className="App">
       {/* <div className="tech">Direction: {direction}, View:{currentView}</div> */}
         <Navbar setIsForm={setIsForm} currentView={currentView} />
-        <IoTriangle className={setArrowsClass('left')} onClick={previousView} />
-        <IoTriangle className={setArrowsClass('right')} onClick={nextView} />
+       
+        {!isMobile && (<IoTriangle className={setArrowsClass('left')} onClick={previousView} />)}
+        {!isMobile && (<IoTriangle className={setArrowsClass('right')} onClick={nextView} />)}
           <Hero currentView={currentView} direction={direction} />
           <Album currentView={currentView} direction={direction} />
           <Video currentView={currentView} direction={direction} />
           <Events currentView={currentView} direction={direction} />
-          <Controls currentView={currentView} setCurrentView={setCurrentView} />
+          {!isMobile && (<Controls currentView={currentView} setCurrentView={setCurrentView} />)}
           <Form isForm={isForm} setIsForm={setIsForm} />
         <Footer />
       </div>

@@ -12,6 +12,12 @@ import e9 from '../assets/images/events/e9.jpg'
 
 const Events = ({ currentView, direction }) => {
   const setClass = () => {
+    const isMobile = window.screen.width < 992;
+    
+    if (isMobile) {
+      return 'events';
+    }
+
     if (currentView === 4 && direction === 'up') {
       return 'events slide-up-in'; 
     }

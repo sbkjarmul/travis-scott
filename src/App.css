@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Oswald:wght@200;300;400;500;600;700&family=Reenie+Beanie&display=swap');
 
-
 :root {
   --primary: rgb(0, 209, 216);
   --primaryShadow: rgb(0, 255, 234);
@@ -21,7 +20,6 @@ body {
 .App {
   width: 100%;
   max-height: 100vh;
-
 }
 
 .navbar {
@@ -100,7 +98,6 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
 }
 
 .hero__caption {
@@ -479,7 +476,6 @@ body {
   transform: translateY(0%);
 }
 
-
 .slide-up-in {
   animation-name: slide-up-in;
 }
@@ -668,3 +664,49 @@ body {
   width: 150px;
 }
 
+@media (max-width: 997.96px) {
+  .hero {
+    background-position: center;
+  }
+
+  .hero,
+  .album,
+  .video,
+  .events {
+    position: relative;
+  }
+
+  .hero__caption {
+    margin: auto;
+  }
+
+  .album, .events {
+    padding-top: 96px;
+    padding-bottom: 96px;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+  }
+
+  .album__image,
+  .album__caption,
+  .events__box {
+    width: 100%;
+  }
+
+  .events {
+    flex-direction: column;
+    height: fit-content;
+    align-items: center;
+  }
+
+  .events__box {
+    align-items: center;
+    padding: 0;
+  }
+
+  .events__images {
+    justify-content: center;
+    margin-top: 48px;
+    margin-bottom: 96px;
+  }
+}
