@@ -7,7 +7,13 @@
 
   display: flex;
   justify-content: space-between;
-  align-items: center;  
+  align-items: center;
+  
+  position: absolute;
+  top: 0;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  transform: translateY(0%); 
 }
 
 .album__image {
@@ -90,14 +96,6 @@
   font-weight: 500;;
 }
 
-.album {
-  position: absolute;
-  top: 0;
-  animation-duration: 2s;
-  animation-timing-function: ease;
-  transform: translateY(0%);
-}
-
 .album--off {
   animation-duration: 2s;
   animation-timing-function: ease;
@@ -109,6 +107,7 @@
 @media (max-width: 997.96px) {
   .album {
     position: relative;
+    height: fit-content;
   }
 
   .albums {
