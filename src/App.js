@@ -62,12 +62,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-      {/* <div className="tech">Direction: {direction}, View:{currentView}</div> */}
         <Navbar setIsForm={setIsForm} currentView={currentView} />
-       
         {!isMobile && (<IoTriangle className={setArrowsClass('left')} onClick={previousView} />)}
         {!isMobile && (<IoTriangle className={setArrowsClass('right')} onClick={nextView} />)}
-          <Hero currentView={currentView} direction={direction} />
+          <Hero currentView={currentView} direction={direction} isForm={isForm} setIsForm={setIsForm} />
           <Album currentView={currentView} direction={direction} />
           <Video currentView={currentView} direction={direction} />
           <Events currentView={currentView} direction={direction} />
