@@ -113,12 +113,12 @@ body {
 
 .hero__text--under {
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 300;
   margin-bottom: 20px;
   margin-left: 32px;
   font-size: 48px;
   letter-spacing: 96px;
-  color: white;
+  color: var(--primaryShadow);
   font-family: 'Orbitron', sans-serif;
 }
 
@@ -129,8 +129,9 @@ body {
   text-transform: uppercase;
   font-size: 24px;
   font-family: 'Oswald', sans-serif;
-  background: white;
-  color: var(--primary);
+  background: transparent;
+  color: white;
+  border: 2px solid white;
   font-weight: 500;
   text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
   border: none;
@@ -750,7 +751,8 @@ body {
     margin: auto;
   }
 
-  .album, .events {
+  .album,
+  .events {
     padding-top: 96px;
     padding-bottom: 96px;
     flex-direction: column-reverse;
@@ -820,19 +822,33 @@ body {
   .footer {
     display: none;
   }
-
-
 }
 
 @media (max-width: 575.98px) {
-
   .album__caption {
     padding: 0;
-
   }
 
-  .hero__text {
+  .hero__caption {
+    margin: auto;
+  }
+
+  .hero__text,
+  .hero__text--under {
     display: none;
+  }
+
+  .hero__button {
+    margin: auto;
+    margin-top: 128px;
+    border: 2px solid var(--primaryShadow);
+    color: var(--primaryShadow);
+    background: none;
+  }
+  
+  .hero__button:hover {
+    color: white;
+    border: 2px solid white;
   }
 
   .events__images {
