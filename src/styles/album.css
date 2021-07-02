@@ -9,6 +9,7 @@
   justify-content: space-between;
   align-items: center;
   
+  z-index: 2;
   position: absolute;
   top: 0;
   animation-duration: 2s;
@@ -102,6 +103,7 @@
   opacity: 0;
   pointer-events: none;
   transition-delay: 2s;
+  z-index: 1;
 }
 
 @media (max-width: 997.96px) {

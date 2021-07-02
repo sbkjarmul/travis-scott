@@ -2,7 +2,7 @@
   width: 100%;
   height: 100vh;
   background: black;  
-
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -33,6 +33,7 @@
   opacity: 0;
   pointer-events: none;
   transition-delay: 2s;
+  z-index: 1;
 }
 
 @media (max-width: 997.96px) {
