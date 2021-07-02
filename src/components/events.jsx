@@ -1,6 +1,7 @@
 import React from 'react'
 import '../App.css'
 import '../styles/events.css'
+import '../styles/controls.css'
 import e1 from '../assets/images/events/e1.jpg' 
 import e2 from '../assets/images/events/e2.jpg' 
 import e3 from '../assets/images/events/e3.jpg' 

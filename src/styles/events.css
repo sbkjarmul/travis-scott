@@ -61,7 +61,7 @@
   transition-delay: 2s;
 }
 
-events__date {
+.events__date {
   width: 64px;
   height: 64px;
   border-radius: 6px;

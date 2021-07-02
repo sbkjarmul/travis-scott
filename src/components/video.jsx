@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ReactPlayer from 'react-player'
 import '../App.css'
 import '../styles/video.css'
+import '../styles/controls.css'
 
 const Video = ({ currentView, direction }) => {
   const [play, setPlay] = useState(false);

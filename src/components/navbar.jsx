@@ -20,9 +20,6 @@ const Navbar = ({ setIsForm, currentView }) => {
         <span className={buttonIconClass}>
          <BsChatDots />
         </span>
-        <span className="navbar__button-text">   
-        Contact
-        </span>
       </button>
     </div>
   )

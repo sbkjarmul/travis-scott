@@ -1,6 +1,7 @@
 import React from 'react'
 import '../App.css'
 import '../styles/album.css'
+import '../styles/controls.css'
 import album from '../assets/images/album.png'
 import { FaApple, FaGooglePlay } from 'react-icons/fa'
 

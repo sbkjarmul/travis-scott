@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../App.css'
 import '../styles/form.css'
+import '../styles/controls.css'
 import FormFields from './form-fields'
 import { IoMdClose } from 'react-icons/io'
 
