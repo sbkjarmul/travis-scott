@@ -76,9 +76,9 @@
 
 .form__button {
   margin-top: 32px;
-  border: 1px solid black;
-  border-radius: 6px;
-  background: none;
+  background: black;
+  color: white;
+  border: none;
   width: 140px;
   padding: 8px 24px;
   height: fit-content;
@@ -90,12 +90,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all .3s ease;
+  transition: all .2s ease;
 }
 
 .form__button:hover {
-  color: var(--primary);
-  border: 1px solid var(--primary);
+  color: white;
+  background: var(--primary);
 }
 
 .form__alert {
